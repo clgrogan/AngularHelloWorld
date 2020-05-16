@@ -13,8 +13,8 @@ import { Component } from "@angular/core";
 // decorator - makes the class a component
 // component accepts one argument, we pass an object.
 @Component({
-  selector: "courses", // defines element <courses>
-  template: "<h2>Courses</h2>",
+  selector: "courses", // defines element <courses> tag
+  template: "<h2>Three step component generation worked!</h2>",
 })
 // export the class for Angular to access the class.
 export class CoursesComponent {}
