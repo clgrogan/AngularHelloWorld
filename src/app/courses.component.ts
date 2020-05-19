@@ -10,11 +10,28 @@
 // Called the decorator function, accessing elements
 // extends html vocabulary, defines new elements/tags
 import { Component } from "@angular/core";
+import { CoursesService } from "./courses.service";
 // decorator - makes the class a component
 // component accepts one argument, we pass an object.
 @Component({
   selector: "courses", // defines element <courses> tag
-  template: "<h2>Three step component generation worked!</h2>",
+  template: ` <h2>{{ "Title: " + getTitle() }}</h2>
+    <ul>
+      <li *ngFor="let course of courses">
+        {{ course }}
+      </li>
+    </ul>`, //String Interpolation in effect.
 })
 // export the class for Angular to access the class.
-export class CoursesComponent {}
+export class CoursesComponent {
+  title = "List of Courses";
+  courses;
+
+  // Dependency injection for constructor.
+  constructor(service: CoursesService) {
+    // Dependency must be registered in the module > Provider. or on rendering will get the ERROR "Error: No provider for CoursesService!"
+    // let service = new CoursesService(); // tightly couples instance to the service class implementation
+    this.courses = service.getCourses();
+  }
+  getTitle = () => this.title;
+}

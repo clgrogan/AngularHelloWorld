@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { CoursesComponent } from "./courses.component"; //Import code automatically added when using auto-complete on declarations class addition.
 import { CourseComponent } from "./course/course.component"; // Generated via angular CLI
+import { CoursesService } from "./courses.service";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { CourseComponent } from "./course/course.component"; // Generated via an
     CourseComponent, // Generated via Angular CLI
   ],
   imports: [BrowserModule],
-  providers: [],
+  providers: [
+    CoursesService, // Registers the courses service for dependency injection use
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
