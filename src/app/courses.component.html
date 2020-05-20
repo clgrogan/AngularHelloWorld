@@ -1,0 +1,14 @@
+<h2>{{ "Title: " + getTitle() }}</h2>
+<button class="btn btn-primary" [class.active]="isActive">
+  Class Binding
+</button>
+<p></p>
+<button [style.backgroundColor]="isActive ? 'blue' : 'white'">
+  Style Binding
+</button>
+
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course }}
+  </li>
+</ul>
