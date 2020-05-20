@@ -6,6 +6,39 @@
 <button [style.backgroundColor]="isActive ? 'blue' : 'white'">
   Style Binding
 </button>
+<p></p>
+<div (click)="onClickDiv()">
+  <button
+    [style.backgroundColor]="isActive ? 'yellow' : 'white'"
+    (click)="onEventBindingClick()"
+  >
+    Event Bubbling Demo
+  </button>
+</div>
+<p></p>
+<div (click)="onClickDiv()">
+  <button
+    [style.backgroundColor]="isActive ? 'yellow' : 'white'"
+    (click)="onEventObjectAccess($event)"
+  >
+    Stop Event Bubbling Demo
+  </button>
+</div>
+<p></p>
+<button
+  [style.backgroundColor]="isActive ? 'pink' : 'yellow'"
+  (click)="onEventBindingClick()"
+>
+  Event Binding
+</button>
+<p></p>
+<button
+  [style.backgroundColor]="isActive ? 'green' : 'red'"
+  (click)="onEventObjectAccess($event)"
+>
+  Event Object Access
+</button>
+<p></p>
 
 <ul>
   <li *ngFor="let course of courses">

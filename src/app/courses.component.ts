@@ -43,4 +43,13 @@ export class CoursesComponent {
     this.courses = service.getCourses();
   }
   getTitle = () => this.title;
+
+  onEventBindingClick = () => console.log("Click Event Button was clicked!");
+
+  onClickDiv = () => console.log("Click Bubbled Up to the div element!");
+
+  onEventObjectAccess = ($event) => {
+    $event.stopPropagation();
+    console.log("Event Object Accessed:", $event);
+  };
 }
