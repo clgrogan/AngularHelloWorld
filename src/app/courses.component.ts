@@ -16,6 +16,13 @@ import { CoursesService } from "./courses.service";
 @Component({
   selector: "courses", // defines element <courses> tag
   template: ` <h2>{{ "Title: " + getTitle() }}</h2>
+    <button class="btn btn-primary" [class.active]="isActive">
+      Class Binding
+    </button>
+    <button [style.backgroundColor]="isActive ? 'blue' : 'white'">
+      Style Binding
+    </button>
+
     <ul>
       <li *ngFor="let course of courses">
         {{ course }}
@@ -25,6 +32,7 @@ import { CoursesService } from "./courses.service";
 // export the class for Angular to access the class.
 export class CoursesComponent {
   title = "List of Courses";
+  isActive = true;
   courses;
 
   // Dependency injection for constructor.
