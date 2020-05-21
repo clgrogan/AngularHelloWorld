@@ -36,6 +36,13 @@ export class CoursesComponent {
   isActive = true;
   courses;
   twoWayBound = "some text";
+  course = {
+    title: "The Complete Angular Course",
+    rating: 66.623,
+    students: 44044,
+    price: 0.99,
+    releaseDate: new Date(2020, 5, 21),
+  };
 
   // Dependency injection for constructor.
   constructor(service: CoursesService) {

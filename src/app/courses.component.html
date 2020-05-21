@@ -71,7 +71,7 @@ Template Variable passed to handling method instead of $event object.
 </div>
 <p></p>
 Two-way binding
-<div>
+<div class="container-fluid">
   Verbose:
   <input
     [(value)]="twoWayBound"
@@ -89,3 +89,70 @@ Two-way binding
   <input [(ngModel)]="twoWayBound" (keyup.enter)="twoWayBindingMethod()" />
   <p></p>
 </div>
+<h2>Pipes| | | |</h2>
+course object properties: title, rating, students, price, releaseDate
+
+<section class="container">
+  Search angular.io to get information about each pipe:
+  <div class="container">
+    https://angular.io/api/common/DecimalPipe<br />
+    https://angular.io/api/common/DatePipe
+  </div>
+  <p></p>
+  <p>
+    Title: '{{ course.title }}'<br />
+    course.title | uppercase = '
+    {{ course.title | uppercase }}'<br />
+    course.title | lowercase = '
+    {{ course.title | lowercase }}'<br />
+    course.title | lowercase | uppercase = '
+    {{ course.title | lowercase | uppercase }}'
+  </p>
+  <p>
+    students: '{{ course.students }}'<br />
+    course.students | number = '
+    {{ course.students | number }}'
+  </p>
+  <p>
+    rating: '{{ course.rating }}'<br />
+    course.rating | number: '2.1-1' = '
+    {{ course.rating | number: "2.1-1" }}'<br />
+    course.rating | number: '3.2-2' = '
+    {{ course.rating | number: "3.2-2" }}'<br />
+    course.rating | number: '3.1-6' = '
+    {{ course.rating | number: "3.1-6" }}'
+  </p>
+  <p>
+    <!-- Warning: the currency pipe has been changed in Angular v5. The symbolDisplay option (third parameter) is now a string instead of a boolean. The accepted values are "code", "symbol" or "symbol-narrow". -->
+    price: '{{ course.price }}'<br />
+    course.price | currency = '
+    {{ course.price | currency }}'
+    <br />
+    course.price | currency:'AUD':'symbol':'3.2-2' = '
+    {{ course.price | currency: "AUD":"symbol":"3.2-2" }}'
+    <br />
+    course.price | currency:'AUD':'symbol-narrow':'3.2-2' = '
+    {{ course.price | currency: "AUD":"symbol-narrow":"3.2-2" }}'
+    <br />
+    course.price | currency:'USD':'code':'1.0-0' = '
+    {{ course.price | currency: "USD":"code":"1.0-0" }}'
+    <br />
+    course.price | currency:'USD':'symbol-narrow':'1.1-1' = '
+    {{ course.price | currency: "USD":"symbol-narrow":"1.1-1" }}'
+  </p>
+  <p>
+    releaseDate: '{{ course.releaseDate }}'
+    <br />
+    course.releaseDate | date:"shortDate" = '
+    {{ course.releaseDate | date: "shortDate" }}'
+    <br />
+    course.releaseDate | date:"short" = '
+    {{ course.releaseDate | date: "short" }}'
+    <br />
+    course.releaseDate | date:"medium" = '
+    {{ course.releaseDate | date: "medium" }}'
+    <br />
+    course.releaseDate | date:"fullDate" = '
+    {{ course.releaseDate | date: "fullDate" }}'
+  </p>
+</section>
