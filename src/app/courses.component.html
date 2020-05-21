@@ -69,3 +69,23 @@ Template Variable passed to handling method instead of $event object.
 <div>
   <input #email (keyup.enter)="templateVariable(email.value)" />
 </div>
+<p></p>
+Two-way binding
+<div>
+  Verbose:
+  <input
+    [(value)]="twoWayBound"
+    (keyup.enter)="twoWayBound = $event.target.value; twoWayBindingMethod()"
+  />
+  <p></p>
+  Use ngModel Directive:
+  <!-- 
+    Can't bind to 'ngModel' since it isn't a known property of 'input'.
+    ngModel is in forms module. forms module is not automatically imported.
+    
+    Need to import the FormsModule from @angular/forms and add it to the imports
+      section in app.modules.ts.
+  -->
+  <input [(ngModel)]="twoWayBound" (keyup.enter)="twoWayBindingMethod()" />
+  <p></p>
+</div>

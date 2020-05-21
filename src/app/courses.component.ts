@@ -35,6 +35,7 @@ export class CoursesComponent {
   title = "List of Courses";
   isActive = true;
   courses;
+  twoWayBound = "some text";
 
   // Dependency injection for constructor.
   constructor(service: CoursesService) {
@@ -64,4 +65,9 @@ export class CoursesComponent {
 
   templateVariable = (pickle) =>
     console.log("Template Variable value:", pickle);
+
+  twoWayBindingMethod = () =>
+    console.log("twoWayBindingMethod value: " + this.twoWayBound);
+
+  //bottom of the class
 }
