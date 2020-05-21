@@ -56,3 +56,13 @@ traditional manor:
 <div>
   <input (keyup.enter)="onKeyUpAngularEventFilter()" />
 </div>
+<p></p>
+Pass $event object to access value:
+<div>
+  <input (keyup.enter)="dollarEventObject($event)" />
+</div>
+<p></p>
+Template Variable passed to handling method instead of $event object.
+<div>
+  <input #email (keyup.enter)="templateVariable(email.value)" />
+</div>

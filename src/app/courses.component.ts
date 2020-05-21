@@ -58,4 +58,10 @@ export class CoursesComponent {
 
   onKeyUpAngularEventFilter = () =>
     console.log("ENTER pressed, Angular Event Filter (keyup.enter)");
+
+  dollarEventObject = ($event) =>
+    console.log("$event.target.value:", $event.target.value);
+
+  templateVariable = (pickle) =>
+    console.log("Template Variable value:", pickle);
 }
