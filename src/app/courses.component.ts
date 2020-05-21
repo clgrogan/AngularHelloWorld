@@ -52,4 +52,10 @@ export class CoursesComponent {
     $event.stopPropagation();
     console.log("Event Object Accessed:", $event);
   };
+
+  onKeyUpVanilla = ($event) =>
+    $event.keyCode === 13 && console.log("ENTER Pressed, Vanilla!");
+
+  onKeyUpAngularEventFilter = () =>
+    console.log("ENTER pressed, Angular Event Filter (keyup.enter)");
 }

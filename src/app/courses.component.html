@@ -1,4 +1,11 @@
 <h2>{{ "Title: " + getTitle() }}</h2>
+
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course }}
+  </li>
+</ul>
+<h2>The interactive elements below write to the console.</h2>
 <button class="btn btn-primary" [class.active]="isActive">
   Class Binding
 </button>
@@ -39,9 +46,13 @@
   Event Object Access
 </button>
 <p></p>
-
-<ul>
-  <li *ngFor="let course of courses">
-    {{ course }}
-  </li>
-</ul>
+Traditional JS keyup event handling for "Enter" key:
+<div>
+  <input (keyup)="onKeyUpVanilla($event)" />
+</div>
+<p></p>
+Event Filtering via Angular. keyup event handling for "Enter" key in a
+traditional manor:
+<div>
+  <input (keyup.enter)="onKeyUpAngularEventFilter()" />
+</div>
