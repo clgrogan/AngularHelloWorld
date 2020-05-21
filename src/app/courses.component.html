@@ -5,7 +5,9 @@
     {{ course }}
   </li>
 </ul>
-<h2>The interactive elements below write to the console.</h2>
+<p>
+  Next elements demonstrate using bootstrap.css, class binding & style binding.
+</p>
 <button class="btn btn-primary" [class.active]="isActive">
   Class Binding
 </button>
@@ -14,6 +16,7 @@
   Style Binding
 </button>
 <p></p>
+<p>The interactive elements below write to the console.</p>
 <div (click)="onClickDiv()">
   <button
     [style.backgroundColor]="isActive ? 'yellow' : 'white'"
