@@ -123,7 +123,9 @@ course object properties: title, rating, students, price, releaseDate
     {{ course.rating | number: "3.1-6" }}'
   </p>
   <p>
-    <!-- Warning: the currency pipe has been changed in Angular v5. The symbolDisplay option (third parameter) is now a string instead of a boolean. The accepted values are "code", "symbol" or "symbol-narrow". -->
+    Warning: the currency pipe has been changed in Angular v5. The symbolDisplay
+    option (third parameter) is now a string instead of a boolean. The accepted
+    values are "code", "symbol" or "symbol-narrow". <br />
     price: '{{ course.price }}'<br />
     course.price | currency = '
     {{ course.price | currency }}'
@@ -155,4 +157,23 @@ course object properties: title, rating, students, price, releaseDate
     course.releaseDate | date:"fullDate" = '
     {{ course.releaseDate | date: "fullDate" }}'
   </p>
+</section>
+
+<h2>Custom Pipes | | | |</h2>
+Custom pipe to truncate a string when passed the text string and optionally a
+length number parameters
+<p></p>
+<section class="container">
+  textParagraph (component field) value:
+  <div class="container">"{{ textParagraph }}"</div>
+</section>
+<p></p>
+<section class="container">
+  textParagraph | truncate :
+  <div class="container">"{{ textParagraph | truncate }}"</div>
+</section>
+<p></p>
+<section class="container">
+  textParagraph | truncate:5 :
+  <div class="container">"{{ textParagraph | truncate: 5 }}"</div>
 </section>

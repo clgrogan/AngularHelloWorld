@@ -6,12 +6,15 @@ import { CoursesComponent } from "./courses.component"; //Import code automatica
 import { CourseComponent } from "./course/course.component"; // Generated via angular CLI
 import { CoursesService } from "./courses.service";
 import { FormsModule } from "@angular/forms";
+import { TruncatePipe } from "./truncate.pipe";
 
 @NgModule({
   declarations: [
+    // declarations includes custom components and pipes.
     AppComponent,
     CoursesComponent, // Component Class Name. In VS Code using auto complete added import above.
     CourseComponent, // Generated via Angular CLI
+    TruncatePipe, // Registration of the custom pipe
   ],
   imports: [BrowserModule, FormsModule],
   providers: [
