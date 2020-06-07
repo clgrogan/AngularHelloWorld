@@ -64,7 +64,7 @@ export class CoursesComponent {
   };
 
   onKeyUpVanilla = ($event) =>
-    $event.keyCode === 13 && console.log("ENTER Pressed, Vanilla!");
+    $event.keyCode === 13 && console.log("ENTER Pressed. Vanilla!");
 
   onKeyUpAngularEventFilter = () =>
     console.log("ENTER pressed, Angular Event Filter (keyup.enter)");
